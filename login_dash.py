@@ -8,31 +8,31 @@ app = dash.Dash(__name__)
 
 usuarios = ler_usuarios()
 
-# Adicionando estilos CSS
+
 external_stylesheets = ['https://codepen.io/chriddyp/pen/bWLwgP.css']
 
 app.layout = html.Div([
     html.Div([
-        html.H2('Bem-vindo a tela de login', style={'textAlign': 'center', 'color': 'white'}),  # Centralizando o título
+        html.H2('Bem-vindo a tela de login', style={'textAlign': 'center', 'color': 'white'}),  
 
         dcc.Dropdown(id='user-dropdown', options=[{'label': user.nome, 'value': user.nome} for user in usuarios],
-                     style={'width': '100%', 'margin-bottom': '10px', 'border-radius': '5px'}),  # Adicionando um estilo ao Dropdown
+                     style={'width': '100%', 'margin-bottom': '10px', 'border-radius': '5px'}),  
 
         dcc.Input(id="password", type="password", placeholder="Senha", style={'width': '100%', 'margin-bottom': '10px', 'border-radius': '5px'}),
 
         html.Button('Entrar', id='login-button', style={'width': '100%', 'border-radius': '5px', 'transition': 'background-color 0.3s'}),
-        # Adicionando uma transição suave na cor de fundo ao passar o mouse
+        
 
-        html.Div(id='login-output', style={'marginTop': '10px'})  # Adicionando um espaço superior
+        html.Div(id='login-output', style={'marginTop': '10px'})  
 
     ], className='login-form', style={'width': '300px', 'margin': 'auto', 'marginTop': '50px', 'padding': '20px',
                                       'border': '2px solid white', 'border-radius': '10px', 'background': 'rgba(0, 0, 0, 0.3)'}),
-    # Centralizando a div de login
+    
 
 ], id='login-page', style={'background': 'url("https://e1.pxfuel.com/desktop-wallpaper/646/773/desktop-wallpaper-login-page-login.jpg")',
                             'background-size': 'cover', 'height': '100vh', 'display': 'flex', 'alignItems': 'center', 'justifyContent': 'center'})
 
-# Adicionando estilos externos
+
 app.css.append_css({'external_url': external_stylesheets})
 
 @app.callback(

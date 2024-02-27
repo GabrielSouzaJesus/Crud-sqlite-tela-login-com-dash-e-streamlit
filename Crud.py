@@ -89,8 +89,3 @@ def  deletar_usuario(id):
         s.commit()
 
 
-# criar_usuarios(
-#     'Gabriel Souza',
-#     senha='Confesso',
-#     email= "gabrielguitta93@gmail.com"
-# )
